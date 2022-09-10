@@ -1,0 +1,9 @@
+Create A Simple JavaScript App to Generate QR Codes (https://www.youtube.com/watch?v=qNiUlml9MDk)
+
+
+https://github.com/bradtraversy/qr-code-generator
+https://github.com/Annie-Huang/qr-code-generator
+
+https://github.com/davidshimjs/qrcodejs
+------------------------------------------------------------
+
