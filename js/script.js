@@ -19,6 +19,12 @@ const onGenerateSubmit = (e) => {
       hideSpinner();
 
       generateQRCode(url, size);
+
+      // Image does not appear straight away. Need to give some time.
+      setTimeout(() => {
+        const saveUrl = qr.querySelector('img').src;
+        createSaveBtn(saveUrl);
+      }, 50);
     }, 1000);
   }
 };
@@ -40,6 +46,18 @@ const hideSpinner = () => {
 
 const clearUI = () => {
   qr.innerHTML = '';
+};
+
+const createSaveBtn = (saveUrl) => {
+  const link = document.createElement('a');
+  link.id = 'save-link';
+  link.classList =
+    'bg-red-500 hover:bg-red-700 text-white font-bold py-2 rounded w-1/3 m-auto my-5';
+  link.href = saveUrl;
+  link.download = 'qrcode';
+  link.innerHTML = 'Save Image';
+
+  document.getElementById('generated').appendChild(link);
 };
 
 hideSpinner();
